@@ -46,6 +46,12 @@
 
     a { color: inherit; text-decoration: none; }
 
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
     .container {
       width: min(1160px, 92%);
       margin: 0 auto;
@@ -69,6 +75,9 @@
     }
 
     .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
       font-size: 21px;
       font-weight: 900;
       letter-spacing: -0.4px;
@@ -76,6 +85,13 @@
     }
 
     .logo span { color: var(--gold); }
+
+    .brand-logo {
+      width: 42px;
+      height: 42px;
+      object-fit: contain;
+      border-radius: 10px;
+    }
 
     .nav-links {
       display: flex;
@@ -128,6 +144,44 @@
       grid-template-columns: 1.12fr 0.88fr;
       gap: 46px;
       align-items: center;
+    }
+
+    .hero-media-stack {
+      display: grid;
+      gap: 20px;
+    }
+
+    .media-frame {
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      background: rgba(255,255,255,0.04);
+      box-shadow: 0 24px 70px rgba(0,0,0,0.28);
+    }
+
+    .media-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-image {
+      aspect-ratio: 4 / 3;
+    }
+
+    .card-media {
+      aspect-ratio: 16 / 10;
+      margin: -4px -4px 18px;
+      border-radius: 20px;
+      box-shadow: none;
+    }
+
+    .section-media {
+      aspect-ratio: 16 / 11;
+    }
+
+    .founder-media {
+      aspect-ratio: 4 / 5;
     }
 
     .eyebrow {
@@ -289,6 +343,11 @@
       align-items: center;
     }
 
+    .stacked-content {
+      display: grid;
+      gap: 20px;
+    }
+
     .pill-row {
       display: flex;
       flex-wrap: wrap;
@@ -382,6 +441,12 @@
       align-items: center;
     }
 
+    .footer-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
     .footer-links {
       display: flex;
       gap: 14px;
@@ -419,7 +484,10 @@
   <header>
     <div class="container">
       <nav aria-label="Primary navigation">
-        <a href="#home" class="logo" aria-label="Fashel Creations home">Fashel<span>Creations</span></a>
+        <a href="#home" class="logo" aria-label="Fashel Creations home">
+          <img class="brand-logo" src="assets/images/logo.png" alt="Fashel Creations logo" width="42" height="42" />
+          <span>Fashel Creations</span>
+        </a>
         <div class="nav-links">
           <a href="#services">Services</a>
           <a href="#systems">Systems</a>
@@ -448,25 +516,31 @@
           </div>
         </div>
 
-        <div class="hero-card" aria-label="Core service categories">
-          <div class="stack-item">
-            <strong>Digital Infrastructure</strong>
-            <span>Websites, storefronts, domains, hosting, SSL security, and cloud deployment.</span>
+        <div class="hero-media-stack">
+          <div class="media-frame hero-image">
+            <img src="assets/images/hq-building.jpg" alt="Fashel Creations headquarters building representing reliable business infrastructure" width="900" height="675" fetchpriority="high" />
           </div>
 
-          <div class="stack-item">
-            <strong>Customer Communication</strong>
-            <span>AI receptionists, WhatsApp automation, email automation, onboarding, and lead capture.</span>
-          </div>
+          <div class="hero-card" aria-label="Core service categories">
+            <div class="stack-item">
+              <strong>Digital Infrastructure</strong>
+              <span>Websites, storefronts, domains, hosting, SSL security, and cloud deployment.</span>
+            </div>
 
-          <div class="stack-item">
-            <strong>Process Automation</strong>
-            <span>Google Sheets, Gmail, Telegram, workflow automation, and operational systems.</span>
-          </div>
+            <div class="stack-item">
+              <strong>Customer Communication</strong>
+              <span>AI receptionists, WhatsApp automation, email automation, onboarding, and lead capture.</span>
+            </div>
 
-          <div class="stack-item">
-            <strong>Visibility & Growth</strong>
-            <span>Google Business Profile optimization, analytics, reporting, and customer tracking.</span>
+            <div class="stack-item">
+              <strong>Process Automation</strong>
+              <span>Google Sheets, Gmail, Telegram, workflow automation, and operational systems.</span>
+            </div>
+
+            <div class="stack-item">
+              <strong>Visibility & Growth</strong>
+              <span>Google Business Profile optimization, analytics, reporting, and customer tracking.</span>
+            </div>
           </div>
         </div>
       </div>
@@ -483,6 +557,9 @@
 
         <div class="grid-4">
           <div class="card">
+            <div class="media-frame card-media">
+              <img src="assets/images/website-dashboard.jpg" alt="Website dashboard showing digital infrastructure and business performance metrics" width="640" height="400" loading="lazy" />
+            </div>
             <div class="label">01 / Digital Infrastructure</div>
             <h3>Business Online Infrastructure</h3>
             <p>We set up the visible and technical layers businesses need to operate professionally online.</p>
@@ -513,6 +590,9 @@
           </div>
 
           <div class="card">
+            <div class="media-frame card-media">
+              <img src="assets/images/office-team.jpg" alt="Office team collaborating on business process automation workflows" width="640" height="400" loading="lazy" />
+            </div>
             <div class="label">03 / Operations</div>
             <h3>Business Process Automation</h3>
             <p>We connect tools and automate repetitive work so businesses run with less manual pressure.</p>
@@ -600,18 +680,24 @@
             </div>
           </div>
 
-          <div class="card">
-            <div class="label">FASHSYST</div>
-            <h3>Systems & Automation Division</h3>
-            <p>
-              FASHSYST is the service arm of Fashel Creations focused on AI automation, customer communication systems, and workflow infrastructure for businesses.
-            </p>
-            <ul>
-              <li>AI customer receptionist</li>
-              <li>WhatsApp and email workflows</li>
-              <li>Lead capture systems</li>
-              <li>Business automation setup</li>
-            </ul>
+          <div class="stacked-content">
+            <div class="media-frame section-media">
+              <img src="assets/images/automation-before-after.jpg" alt="Before and after view of business automation replacing manual workflow steps" width="900" height="620" loading="lazy" />
+            </div>
+
+            <div class="card">
+              <div class="label">FASHSYST</div>
+              <h3>Systems & Automation Division</h3>
+              <p>
+                FASHSYST is the service arm of Fashel Creations focused on AI automation, customer communication systems, and workflow infrastructure for businesses.
+              </p>
+              <ul>
+                <li>AI customer receptionist</li>
+                <li>WhatsApp and email workflows</li>
+                <li>Lead capture systems</li>
+                <li>Business automation setup</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -628,6 +714,9 @@
 
         <div class="grid-3">
           <div class="card project-card">
+            <div class="media-frame card-media">
+              <img src="assets/images/cloud-architecture.jpg" alt="Cloud architecture diagram representing AWS infrastructure deployment" width="640" height="400" loading="lazy" />
+            </div>
             <div class="label">Cloud Infrastructure</div>
             <h3>AWS Web Server Deployment</h3>
             <p>
@@ -694,14 +783,43 @@
           <h2>Cloud infrastructure and automation for businesses that want systems, not scattered tools.</h2>
         </div>
 
-        <div class="card">
+        <div class="stacked-content">
+          <div class="media-frame section-media">
+            <img src="assets/images/strategy-meeting.jpg" alt="Strategy meeting for cloud infrastructure and business automation planning" width="900" height="620" loading="lazy" />
+          </div>
+
+          <div class="card">
+            <p>
+              Fashel Creations is a cloud infrastructure and business automation company helping businesses build reliable online systems, automate communication, and improve digital operations.
+            </p>
+            <br />
+            <p>
+              We combine cloud engineering, AI automation, digital infrastructure, and business systems thinking to help companies move from manual operations to structured online workflows.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="founder" class="band">
+      <div class="container split">
+        <div class="media-frame founder-media">
+          <img src="assets/images/founder.jpg" alt="Blinky, founder of Fashel Creations" width="720" height="900" loading="lazy" />
+        </div>
+
+        <div>
+          <span class="eyebrow">Meet the Founder</span>
+          <h2>Building cloud infrastructure and automation systems for growing businesses.</h2>
           <p>
-            Fashel Creations is a cloud infrastructure and business automation company helping businesses build reliable online systems, automate communication, and improve digital operations.
+            Founded by Blinky, Fashel Creations combines cloud engineering, AI automation, and business systems thinking to help businesses replace manual work with scalable digital infrastructure.
           </p>
-          <br />
-          <p>
-            We combine cloud engineering, AI automation, digital infrastructure, and business systems thinking to help companies move from manual operations to structured online workflows.
-          </p>
+
+          <div class="pill-row" aria-label="Founder highlights">
+            <span class="pill">Cloud Infrastructure</span>
+            <span class="pill">AI Automation</span>
+            <span class="pill">Business Systems</span>
+            <span class="pill">Documented Delivery</span>
+          </div>
         </div>
       </div>
     </section>
@@ -751,8 +869,9 @@
 
   <footer>
     <div class="container footer-row">
-      <div>
-        © 2026 Fashel Creations — Cloud Infrastructure & Business Automation Solutions.
+      <div class="footer-brand">
+        <img class="brand-logo" src="assets/images/logo.png" alt="Fashel Creations logo" width="42" height="42" />
+        <span>© 2026 Fashel Creations — Cloud Infrastructure & Business Automation Solutions.</span>
       </div>
       <div class="footer-links" aria-label="Footer links">
         <a href="https://fashelcreations.com" target="_blank" rel="noopener">Website</a>
