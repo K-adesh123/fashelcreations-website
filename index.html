@@ -478,6 +478,109 @@
       .feature { padding: 28px; }
       h1 { letter-spacing: -1.4px; }
     }
+
+    @media (max-width: 600px) {
+      .container {
+        width: min(100% - 32px, 1160px);
+      }
+
+      nav,
+      .hero-grid,
+      .grid-2,
+      .grid-3,
+      .grid-4,
+      .split,
+      .contact-grid,
+      .hero-media-stack,
+      .stacked-content,
+      .card,
+      .hero-card,
+      .feature,
+      .contact-box,
+      .footer-row,
+      .footer-brand {
+        min-width: 0;
+      }
+
+      .logo {
+        font-size: 19px;
+        white-space: normal;
+      }
+
+      .nav-links {
+        width: 100%;
+        gap: 8px 14px;
+      }
+
+      .eyebrow,
+      .label,
+      h1,
+      h2,
+      h3,
+      p,
+      .btn,
+      .card,
+      .hero-card,
+      .contact-link,
+      .footer-brand span {
+        overflow-wrap: anywhere;
+      }
+
+      .eyebrow {
+        max-width: 100%;
+        border-radius: 18px;
+        line-height: 1.4;
+      }
+
+      h1 {
+        font-size: clamp(32px, 9vw, 40px);
+        letter-spacing: 0;
+      }
+
+      h2 {
+        font-size: clamp(27px, 8vw, 34px);
+        letter-spacing: 0;
+      }
+
+      .hero p,
+      .section-title p,
+      .contact-box p {
+        font-size: 16px;
+      }
+
+      .actions {
+        width: 100%;
+        gap: 10px;
+      }
+
+      .btn {
+        flex: 1 1 100%;
+        max-width: 100%;
+        padding: 12px 16px;
+        text-align: center;
+      }
+
+      .card,
+      .hero-card,
+      .feature,
+      .contact-box {
+        padding: 22px;
+      }
+
+      .stack-item strong,
+      .card h3 {
+        font-size: 21px;
+      }
+
+      .pill-row {
+        gap: 8px;
+      }
+
+      .pill {
+        max-width: 100%;
+        overflow-wrap: anywhere;
+      }
+    }
   </style>
 </head>
 <body>
